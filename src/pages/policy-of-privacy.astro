@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Docs.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+import { parseXmlToHtml } from "../utils/xml-parser";
+import fs from 'fs';
+import path from 'path';
+
+const xml = fs.readFileSync(path.join(process.cwd(), 'src', 'utils', 'policy-and-privacy.xml'), 'utf-8');
+const content = parseXmlToHtml(xml);
+---
+
+<BaseLayout title="Spaceflighter - Editor">
+	<Navbar />
+	<Layout>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-xl-7" style="max-width: 100%;">
+                <div class="doc-content p-0" set:html={content}></div>
+            </div>
+        </div>
+	</Layout>
+</BaseLayout>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		const navbar = document.querySelector('.custom-navbar');
+		if (!navbar) return;
+		navbar.classList.add('visible');
+	});
+</script>

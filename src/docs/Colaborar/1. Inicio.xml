@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+	<authors>
+		<author>
+			<nickname>Ether</nickname>
+			<rol>Creador</rol>
+		</author>
+	</authors>
+
+	<section>
+		<title2>Colaborar con la wiki oficial de Spaceflighter.</title2>
+		<p>¡Colaborar es muy simple!</p>
+		<p>La Wiki interpreta ficheros XML, un lenguaje de marcas muy sencillo de comprender.</p>
+
+		<accordion>
+			<item>
+				<title>¿Cómo empiezo a colaborar?</title>
+				<content>
+					Debes publicar en nuestro GitHub los ficheros XML que has creado o editado. Después, aparecerán en la web. ¡Al colaborar obtendrás un rol en nuestro servidor de Discord!
+					<cardgrid>
+						<card>
+							<p>Para crear los XML puedes ir a nuestro Editor Integrado.</p>
+							<linkbutton href="/editor" variant="primary">
+								Ir al Editor
+							</linkbutton>
+						</card>
+						<card>
+							<p>Puedes ver ejemplos de todos los componentes XML disponibles en la siguiente página.</p>
+							<linkbutton href="/wiki/2.%20Componentes">
+								Siguiente página
+							</linkbutton>
+						</card>
+					</cardgrid>
+
+					<title2>Pasos para colaborar en GitHub:</title2>
+					<steps>
+						<step>
+							<title4>Prepara tus ficheros XML</title4>
+							<p>Primero necesitas preparar los ficheros XML que has editado o creado.</p>
+						</step>
+						
+						<step>
+							<title4>Ve a nuestro GitHub</title4>
+							<p>Entra a GitHub y accede a nuestro repositorio.</p>
+						</step>
+						
+						<step>
+							<title4>Publica un Pull Request</title4>
+							<p>Accede al apartado "Pull Request" y publica un "Pull Request".</p>
+						</step>
+					</steps>
+				</content>
+			</item>
+			<item>
+				<title>¿Puedo publicar lo que yo quiera?</title>
+				<content>No, todo lo que se publique debe ser en relación al bot Spaceflighter.</content>
+			</item>
+			<item>
+				<title>¿Qué es el apartado de Autores?</title>
+				<content>
+					Todos los colaboradores de la Wiki tienen derecho a dejar su legado en este apartado.
+					<separator></separator>
+					<p>Por favor, si vas a dejar tu legado respeta a los demás:</p>
+					<list>
+						<listitem>No borres otros colaboradores ni creador.</listitem>
+						<listitem>Si has editado un fichero XML existente, agrégate como colaborador.</listitem>
+						<listitem>Si has creado un fichero XML existente, agrégate como creador.</listitem>
+						<listitem>Si hay alguien con un nickname parecido al tuyo, respétalo y usa otro nickname.</listitem>
+						<listitem>Si estás colaborando en un fichero XML, agrégate el último en la lista para respetar a los que colaboraron antes.</listitem>
+					</list>
+					<warning>No respetar estas reglas puede resultar en que tu colaboración se deniegue.</warning>
+				</content>
+			</item>
+		</accordion>
+
+	</section>
+</document>

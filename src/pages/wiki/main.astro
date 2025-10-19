@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { parseXmlToHtml } from "../../utils/xml-parser";
+import fs from 'fs';
+import path from 'path';
+
+const docFilesPath = path.join(process.cwd(), 'src', 'docs');
+const docFiles = fs.readdirSync(docFilesPath);
+const docs: any = [];
+
+function readDocs(dir: string[], _path: string, subfile: boolean) {
+	dir.forEach(file => {
+		if (file.endsWith('.xml')) {
+			const name = file.replace('.xml', '');
+			const content = fs.readFileSync(path.join(_path, file), 'utf-8');
+			const pushableObj = { slug: name, html: parseXmlToHtml(content) };
+			docs.push(subfile? { ...pushableObj, dir: path.parse(_path).name } : pushableObj);
+		} else if (!file.includes('.')) {
+			readDocs(fs.readdirSync(path.join(_path, file)), path.join(_path, file), true);
+		}
+	});
+}
+
+readDocs(docFiles, docFilesPath, false);
+
+const firstDoc = docs[0];
+---
+
+<Layout title="Spaceflighter - Wiki">
+	<DocsLayout title={firstDoc.title} docs={docs} content={firstDoc.html} />
+</Layout>

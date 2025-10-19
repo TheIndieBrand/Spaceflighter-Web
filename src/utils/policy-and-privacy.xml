@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <title1>🛰️ Política de Privacidad de Spaceflighter</title1>
+    <p>Última actualización: 19 de octubre de 2025</p>
+    <p>Esta Política de Privacidad describe cómo el bot Spaceflighter (en adelante, “el bot”, “nosotros” o “nuestro”) recopila, utiliza y protege la información de los usuarios que interactúan con sus servicios dentro de la plataforma Discord.</p>
+
+    <title2>1. Información que recopilamos</title2>
+    <p>El bot recopila únicamente la siguiente información identificable:</p>
+    <list>
+        <listitem>ID de usuario de Discord: se utiliza para identificar de manera única a cada usuario dentro del sistema del bot.</listitem>
+        <listitem>Datos internos del minijuego: incluyen progreso, puntuaciones, recursos o estadísticas del juego. Estos datos no permiten identificar al usuario fuera de Discord.</listitem>
+    </list>
+    <p>El bot no almacena mensajes, nombres de usuario, avatares ni conversaciones. Tampoco recopila datos personales fuera de Discord.</p>
+
+
+    <title2>2. Finalidad del tratamiento</title2>
+    <p>La información recopilada se utiliza exclusivamente para:</p>
+    <list>
+        <listitem>Permitir el funcionamiento correcto del minijuego y sus funciones.</listitem>
+        <listitem>Guardar y restaurar el progreso del usuario dentro de Spaceflighter.</listitem>
+        <listitem>Mantener la integridad de los datos y prevenir abusos o usos indebidos del bot.</listitem>
+    </list>
+    <p>No se utilizan los datos con fines publicitarios, analíticos ni de perfilado.</p>
+
+    <title2>3. Base legal del tratamiento</title2>
+    <p>El tratamiento de los datos se realiza conforme al artículo 6.1.b del Reglamento (UE) 2016/679 (RGPD): el procesamiento es necesario para la ejecución de un servicio solicitado voluntariamente por el usuario (el uso del bot).</p>
+
+    <title2>4. Almacenamiento y seguridad</title2>
+    <p>Los datos se almacenan en una base de datos PostgreSQL protegida mediante medidas técnicas y organizativas adecuadas (acceso restringido, cifrado de credenciales y control de permisos).</p>
+    <p>No se comparten datos con terceros, salvo obligación legal o requerimiento judicial.</p>
+
+    <title2>5. Conservación de los datos</title2>
+    <p>Los datos se conservarán mientras el usuario mantenga interacción con el bot. Si un usuario deja de usarlo, sus datos podrán ser eliminados automáticamente tras un período de inactividad o bajo solicitud expresa.</p>
+
+    <title2>6. Derechos de los usuarios</title2>
+    <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), el usuario puede ejercer los siguientes derechos:</p>
+    <list>
+        <listitem>Acceder a sus datos personales.</listitem>
+        <listitem>Solicitar su rectificación o eliminación.</listitem>
+        <listitem>Limitar u oponerse al tratamiento.</listitem>
+    </list>
+    <p>Para ejercer estos derechos, el usuario puede contactar con el equipo del bot a través de nuestro servidor oficial de soporte:</p>
+    <linkbutton href="https://discord.gg/nt9C96uHRb" variant="minimal">
+        Servidor de Discord de Spaceflighter
+    </linkbutton>
+
+    <title2>7. Enlaces externos</title2>
+    <p>El bot puede incluir enlaces a servidores o contenidos de terceros. No nos hacemos responsables de las políticas o prácticas de privacidad de dichos servicios.</p>
+
+    <title2>8. Cambios en esta política</title2>
+    <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Las actualizaciones se publicarán en esta misma ubicación o se notificarán mediante el bot.</p>
+
+    <title2>9. Contacto</title2>
+    <p>Si tienes preguntas o solicitudes relacionadas con la privacidad de tus datos, puedes ponerte en contacto con nosotros mediante el servidor oficial de soporte:</p>
+    <linkbutton href="https://discord.gg/nt9C96uHRb" variant="minimal">
+        Servidor de Discord de Spaceflighter
+    </linkbutton>
+</document>

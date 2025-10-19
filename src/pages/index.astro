@@ -1,11 +1,233 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/navbar.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Spaceflighter - Inicio">
+    <Navbar />
+
+    <section>
+        <div
+            class="parallax fade-in"
+            data-speed="0.1"
+            data-image="https://media.discordapp.net/attachments/1413154028333957170/1428017238878851092/spaceflighter_banner2.png?ex=68f0f831&is=68efa6b1&hm=d6e6efc4aab07857d691fb3340aa3c4ad608ad77e136c51a510d413fe9d2866e&=&format=webp&quality=lossless"
+            style="min-height: 100vh;"
+        >
+            <div
+                class="position-absolute w-100 h-100"
+                style="background-color: rgba(0, 0, 0, 0.6); top: 0; left: 0;"
+            ></div>
+
+            <div class="text-center p-5 position-relative z-100 d-flex flex-column align-items-center justify-content-center h-100">
+                <span class="text-uppercase text-white fw-bold">
+                    Your travel starts here
+                </span>
+                <h1 class="mb-4 mt-2 fw-bold text-white fs-1">Spaceflighter</h1>
+
+                <div class="d-flex justify-content-center flex-wrap gap-2">
+                    <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1396877595525644530" class="btn btn-primary btn-lg rounded-pill px-5 me-2">
+                        <i class="bi bi-link-45deg"></i>
+                        Invitar al bot
+                    </a>
+                    <a target="_blank" href="https://discord.gg/nt9C96uHRb" class="btn btn-outline-primary btn-lg rounded-pill px-5 pt-2 text-white"
+                    >
+                        <i class="bi bi-discord"></i>
+                        Soporte Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center text-white bg-dark py-5">
+        <div class="container fade-in">
+            <h2 class="fw-bold mb-4 display-5">Tu compañía espacial te espera</h2>
+            <p class="lead mb-5 text-secondary">
+                Construye cohetes, conquista sistemas solares y evoluciona tu empresa interestelar antes de que otros te derroten.
+            </p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card p-4 rounded-4 h-100">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-rocket-takeoff fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Construcción</h5>
+                        <p class="text-secondary">
+                            Diseña y mejora tus cohetes para explorar el universo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-card p-4 rounded-4 h-100">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-globe-americas fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Exploración</h5>
+                        <p class="text-secondary">
+                            Descubre nuevos planetas y sistemas solares.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-card p-4 rounded-4 h-100">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-cpu fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Gestión</h5>
+                        <p class="text-secondary">
+                            Administra recursos, invierte en tecnología y supera a tus rivales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark text-white py-5 d-flex align-items-center">
+        <div class="container my-auto fade-in">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="fw-bold display-3 fw-bold text-white mb-3">
+                        Inicia tu <br class="d-none d-md-inline"> Historia
+                    </h2>
+                    <p class="lead text-secondary">
+                        Explora galaxias, gestiona tu compañía<br class=""d-none d-md-inline>y domina el cosmos.<br class=""d-none d-md-inline>Tu aventura espacial empieza ahora.
+                    </p>
+                    <a href="/wiki/1.%20Introduccion" class="btn btn-outline-primary mt-3 px-4 py-2">
+                        Ir a la Wiki
+                    </a>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <img class="rounded-2" src="https://media.discordapp.net/attachments/1413154028333957170/1428040232271483022/image.png?ex=68f10d9b&is=68efbc1b&hm=b8732c2eeb4e60400f29196016b926d00c4eb11df3014260b56b865170735074&=&format=webp&quality=lossless">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(white 1px, transparent 1px);
+            background-size: 3px 3px;
+            opacity: 0.15;
+            animation: starsMove 60s linear infinite;
+        }
+
+        @keyframes starsMove {
+            from { background-position: 0 0; }
+            to { background-position: -500px 500px; }
+        }
+
+        section {
+            scroll-margin-top: 80px;
+            transition: background-color 0.6s ease, color 0.6s ease;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+            border-color: rgba(13, 110, 253, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .icon-container {
+            background: rgba(13, 110, 253, 0.1);
+            border: 1px solid rgba(13, 110, 253, 0.2);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover .icon-container {
+            background: rgba(13, 110, 253, 0.25);
+            transform: scale(1.1);
+        }
+    </style>
+
+    <script>
+        const elements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        },
+        {
+            threshold: 0.2
+        });
+
+        elements.forEach(el => observer.observe(el));
+
+        window.addEventListener('scroll', () => {
+			const navbar = document.querySelector('.custom-navbar');
+			const buttons = document.querySelector('.btn.btn-primary');
+			if (!navbar || !buttons) return;
+
+			const rect = buttons.getBoundingClientRect();
+
+			if (rect.bottom < 0) {
+				navbar.classList.add('visible');
+			} else {
+				navbar.classList.remove('visible');
+			}
+		});
+    </script>
+
 </Layout>

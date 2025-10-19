@@ -1,0 +1,61 @@
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark navbar-modern fixed-top custom-navbar">
+    <div class="container">
+        <a class="navbar-brand logo" href="/">
+            <i class="fas fa-rocket text-primary"></i>
+            Spaceflighter
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavMain">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/wiki/1.%20Introduccion">Wiki</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="https://discord.gg/nt9C96uHRb">Soporte</a></li>
+                <li class="nav-item">
+                    <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1396877595525644530" class="btn btn-outline-primary ms-3">
+                        Invitar Bot
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .custom-navbar {
+        background: rgba(10, 10, 20, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: all 0.5s ease;
+        z-index: 9999;
+    }
+
+    .custom-navbar.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-modern .nav-link {
+        color: #ddd !important;
+        transition: color 0.2s ease;
+    }
+
+    .navbar-modern .nav-link:hover {
+        color: #0d6efd !important;
+    }
+
+    .navbar-modern .btn-outline-primary {
+        border-color: #0d6efd;
+        color: #0d6efd;
+    }
+
+    .navbar-modern .btn-outline-primary:hover {
+        background: #0d6efd;
+        color: white;
+    }
+</style>

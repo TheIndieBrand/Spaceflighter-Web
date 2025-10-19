@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <title1>🚀 Términos del Servicio de Spaceflighter</title1>
+    <p>Última actualización: 19 de octubre de 2025</p>
+    <p>Estos Términos del Servicio (“Términos”) regulan el uso del bot Spaceflighter (en adelante, “el bot”, “nosotros” o “nuestro”) dentro de la plataforma Discord. Al utilizar el bot, el usuario (“tú”) acepta estos Términos en su totalidad. Si no estás de acuerdo, te recomendamos no interactuar con el bot.</p>
+
+    <title2>1. Definición del servicio</title2>
+    <p>Spaceflighter es un bot de Discord que ofrece funciones de entretenimiento y gestión mediante un sistema de minijuegos espaciales. El bot está diseñado para su uso dentro de servidores de Discord, conforme a las normas de la propia plataforma.</p>
+
+    <title2>2. Uso permitido</title2>
+    <p>El usuario se compromete a:</p>
+    <list>
+        <listitem>Utilizar el bot únicamente dentro de los límites establecidos por Discord y sus Términos de Servicio.</listitem>
+        <listitem>No intentar alterar, descompilar o explotar el código o las funciones del bot.</listitem>
+        <listitem>No usar el bot para fines ilegales, ofensivos o que vulneren los derechos de terceros.</listitem>
+        <listitem>No abusar de sus comandos, sistemas de puntuación o almacenamiento de datos.</listitem>
+    </list>
+    <p>El incumplimiento de estas normas puede resultar en la restricción temporal o permanente del acceso al bot.</p>
+
+    <title2>3. Recopilación y uso de datos</title2>
+    <p>El bot únicamente recopila la ID de usuario de Discord y datos internos del minijuego para permitir su correcto funcionamiento.</p>
+    <p>El tratamiento de esta información se regula bajo nuestra Política de Privacidad:</p>
+    <linkbutton href="/policy-of-privacy" variant="minimal">
+        Política de Privacidad
+    </linkbutton>
+    <p>No se recopilan mensajes, nombres ni datos personales fuera de Discord.</p>
+
+    <title2>4. Disponibilidad del servicio</title2>
+    <p>Aunque se procura mantener el bot activo y funcional, Spaceflighter no garantiza disponibilidad continua ni ausencia de errores.</p>
+    <p>El servicio puede suspenderse temporal o permanentemente por motivos técnicos, de mantenimiento o por decisión del equipo de desarrollo, sin obligación de previo aviso.</p>
+
+    <title2>5. Propiedad intelectual</title2>
+    <p>Todo el código, diseño, funcionalidades y contenidos del bot pertenecen a su desarrollador.</p>
+    <p>Se prohíbe la reproducción, copia o redistribución del bot o de sus componentes sin autorización expresa.</p>
+
+    <title2>6. Limitación de responsabilidad</title2>
+    <p>El uso del bot es bajo tu propia responsabilidad.</p>
+    <p>Spaceflighter no se hace responsable de:</p>
+    <list>
+        <listitem>Pérdidas de datos o errores derivados de un mal uso del bot.</listitem>
+        <listitem>Daños ocasionados por interrupciones del servicio o mantenimiento.</listitem>
+        <listitem>Contenidos generados por usuarios dentro de servidores de Discord.</listitem>
+    </list>
+    <p>El bot se ofrece “tal cual”, sin garantías explícitas ni implícitas.</p>
+
+    <title2>7. Modificaciones de los Términos</title2>
+    <p>Nos reservamos el derecho de actualizar o modificar estos Términos en cualquier momento.</p>
+    <p>Las actualizaciones entrarán en vigor desde su publicación o desde su anuncio a través del bot o nuestro servidor de soporte.</p>
+
+    <title2>8. Terminación del uso</title2>
+    <p>Podemos suspender o eliminar el acceso de un usuario o servidor al bot en cualquier momento si se detecta un uso indebido, abuso del sistema o violación de estos Términos.</p>
+
+    <title2>9. Contacto</title2>
+    <p>Si tienes preguntas sobre estos Términos, puedes contactar con el equipo de Spaceflighter a través de nuestro servidor oficial de Discord:</p>
+    <linkbutton href="https://discord.gg/nt9C96uHRb" variant="minimal">
+        Servidor de Discord de Spaceflighter
+    </linkbutton>
+</document>

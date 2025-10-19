@@ -1,0 +1,681 @@
+---
+import Layout from "../layouts/Docs.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+---
+
+<style>
+	:root {
+		--editor-bg: #ffffff;
+		--editor-surface: #f7f6f3;
+		--editor-text: #37352f;
+		--editor-text-secondary: #787774;
+		--editor-border: #e9e9e7;
+		--editor-accent: #2383e2;
+		--editor-line-number: #9b9a97;
+		--editor-selection: rgba(35, 131, 226, 0.15);
+		--editor-shadow: rgba(0, 0, 0, 0.05);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--editor-bg: #191919;
+			--editor-surface: #252525;
+			--editor-text: #e6edf3;
+			--editor-text-secondary: #9b9a97;
+			--editor-border: #373737;
+			--editor-accent: #5a9fd4;
+			--editor-line-number: #6f6f6f;
+			--editor-selection: rgba(90, 159, 212, 0.2);
+			--editor-shadow: rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	:global(body) {
+		margin: 0;
+		padding: 0;
+		background: var(--editor-bg) !important;
+	}
+
+	.editor-page {
+		display: flex;
+		min-height: 100vh;
+		background: var(--editor-bg);
+		gap: 2rem;
+		padding: 2rem;
+	}
+
+	.editor-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		max-width: 50%;
+	}
+
+	.preview-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		max-width: 50%;
+	}
+
+	.panel-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		padding: 0 0.5rem;
+	}
+
+	.panel-title {
+		color: var(--editor-text);
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin: 0;
+		letter-spacing: -0.01em;
+	}
+
+	.line-count {
+		color: var(--editor-text-secondary);
+		font-size: 0.875rem;
+		font-family: 'SF Mono', Monaco, monospace;
+	}
+
+	.code-editor-container {
+		flex: 1;
+		display: flex;
+		background: var(--editor-surface);
+		border: 1px solid var(--editor-border);
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px var(--editor-shadow);
+		position: relative;
+	}
+
+	.line-numbers {
+		background: var(--editor-surface);
+		color: var(--editor-line-number);
+		padding: 1rem 0.75rem;
+		font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		text-align: right;
+		user-select: none;
+		border-right: 1px solid var(--editor-border);
+		min-width: 3.5rem;
+		overflow: hidden;
+	}
+
+	.line-number {
+		display: block;
+		height: 1.4rem;
+	}
+
+	#xml-input {
+		flex: 1;
+		background: var(--editor-surface);
+		color: var(--editor-text);
+		border: none;
+		outline: none;
+		font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		resize: none;
+		padding: 1rem;
+		margin: 0;
+		overflow-y: auto;
+		overflow-x: auto;
+		white-space: pre;
+		word-wrap: normal;
+	}
+
+	#xml-input::selection {
+		background: var(--editor-selection);
+	}
+
+	#xml-input::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	#xml-input::-webkit-scrollbar-track {
+		background: var(--editor-surface);
+	}
+
+	#xml-input::-webkit-scrollbar-thumb {
+		background: var(--editor-border);
+		border-radius: 5px;
+	}
+
+	#xml-input::-webkit-scrollbar-thumb:hover {
+		background: var(--editor-line-number);
+	}
+
+	.preview-container {
+		flex: 1;
+		background: var(--editor-bg);
+		border: 1px solid var(--editor-border);
+		border-radius: 8px;
+		padding: 2rem;
+		overflow-y: auto;
+		box-shadow: 0 2px 8px var(--editor-shadow);
+	}
+
+	.preview-container::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	.preview-container::-webkit-scrollbar-track {
+		background: var(--editor-bg);
+	}
+
+	.preview-container::-webkit-scrollbar-thumb {
+		background: var(--editor-border);
+		border-radius: 5px;
+	}
+
+	.preview-container::-webkit-scrollbar-thumb:hover {
+		background: var(--editor-line-number);
+	}
+
+	.preview-title {
+		color: var(--editor-text);
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		letter-spacing: -0.02em;
+	}
+
+	.empty-state {
+		color: var(--editor-text-secondary);
+		font-style: italic;
+		text-align: center;
+		padding: 4rem 2rem;
+	}
+
+	.error-message {
+		color: #ef4444;
+		background: rgba(239, 68, 68, 0.1);
+		border: 1px solid rgba(239, 68, 68, 0.2);
+		border-radius: 6px;
+		padding: 1rem;
+		margin: 1rem 0;
+		font-family: 'SF Mono', Monaco, monospace;
+		font-size: 0.875rem;
+	}
+
+	.editor-toolbar {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+		padding: 0 0.5rem;
+	}
+
+	.toolbar-btn {
+		background: var(--editor-surface);
+		color: var(--editor-text-secondary);
+		border: 1px solid var(--editor-border);
+		border-radius: 4px;
+		padding: 0.375rem 0.75rem;
+		font-size: 0.813rem;
+		cursor: pointer;
+		transition: all 0.15s ease;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	}
+
+	.toolbar-btn:hover {
+		background: var(--editor-border);
+		color: var(--editor-text);
+	}
+
+	.toolbar-btn:active {
+		transform: translateY(1px);
+	}
+
+	@media (max-width: 1200px) {
+		.editor-page {
+			flex-direction: column;
+			padding: 1rem;
+		}
+
+		.editor-panel,
+		.preview-panel {
+			max-width: 100%;
+			min-height: 50vh;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.panel-title {
+			font-size: 1.25rem;
+		}
+
+		.preview-title {
+			font-size: 1.5rem;
+		}
+
+		.code-editor-container {
+			min-height: 400px;
+		}
+	}
+</style>
+
+<BaseLayout title="Spaceflighter - Editor">
+	<Navbar />
+	<Layout>
+		<div class="editor-page">
+			<div class="editor-panel">
+				<div class="panel-header">
+					<h2 class="panel-title">Editor XML</h2>
+					<span class="line-count" id="line-count">1 línea</span>
+				</div>
+				
+				<div class="editor-toolbar">
+					<button class="toolbar-btn" id="format-btn" title="Formatear XML (Ctrl+Shift+F)">
+						Formatear
+					</button>
+					<button class="toolbar-btn" id="clear-btn" title="Limpiar editor">
+						Limpiar
+					</button>
+					<button class="toolbar-btn" id="copy-btn" title="Copiar contenido">
+						Copiar
+					</button>
+					<button class="toolbar-btn" id="download-btn" title="Descargar XML">
+						Descargar
+					</button>
+				</div>
+
+				<div class="code-editor-container">
+					<div class="line-numbers" id="line-numbers">
+						<span class="line-number">1</span>
+					</div>
+					<textarea 
+						id="xml-input" 
+						placeholder="Escribe tu XML aquí...&#10;&#10;Atajos:&#10;• Tab: insertar 4 espacios&#10;• Ctrl+Z: deshacer&#10;• Ctrl+Shift+F: formatear"
+						spellcheck="false"
+					></textarea>
+				</div>
+			</div>
+
+			<div class="preview-panel">
+				<div class="panel-header">
+					<h2 class="panel-title">Vista Previa</h2>
+				</div>
+				
+				<div class="preview-container">
+					<div id="output-content" class="doc-content">
+						<div class="empty-state">
+							Escribe XML en el editor para ver la vista previa...
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Layout>
+</BaseLayout>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		const navbar = document.querySelector('.custom-navbar');
+		if (!navbar) return;
+		navbar.classList.add('visible');
+	});
+
+	window.addEventListener('scroll', () => {
+		const navbar = document.querySelector('.custom-navbar');
+		const buttons = document.querySelector('.panel-title');
+
+		if (!navbar || !buttons) return;
+
+		const rect = buttons.getBoundingClientRect();
+		if (rect.bottom < 0) {
+			navbar.classList.remove('visible');
+		} else {
+			navbar.classList.add('visible');
+		}
+	});
+
+	import { parseXmlToHtml } from "../utils/xml-parser";
+
+	const input = document.getElementById("xml-input") as HTMLTextAreaElement;
+	const output = document.getElementById("output-content");
+	const lineNumbers = document.getElementById("line-numbers");
+	const lineCount = document.getElementById("line-count");
+	const formatBtn = document.getElementById("format-btn");
+	const clearBtn = document.getElementById("clear-btn");
+	const copyBtn = document.getElementById("copy-btn");
+	const downloadBtn = document.getElementById("download-btn");
+
+	function updateLineNumbers() {
+		if (!input || !lineNumbers || !lineCount) return;
+		
+		const lines = input.value.split('\n');
+		const lineNumbersHtml = lines.map((_, i) => 
+			`<span class="line-number">${i + 1}</span><br>`
+		).join('');
+		
+		lineNumbers.innerHTML = lineNumbersHtml;
+		
+		const count = lines.length;
+		lineCount.textContent = `${count} línea${count !== 1 ? 's' : ''}`;
+	}
+
+	function syncScroll() {
+		if (!input || !lineNumbers) return;
+		lineNumbers.scrollTop = input.scrollTop;
+	}
+
+	function updateOutput() {
+		if (!input || !output) return;
+
+		const xml = input.value.trim();
+		
+		if (!xml) {
+			output.innerHTML = '<div class="empty-state">Escribe XML en el editor para ver la vista previa...</div>';
+			return;
+		}
+
+		try {
+			const html = parseXmlToHtml(xml);
+			output.innerHTML = html;
+		} catch (err) {
+			output.innerHTML = `
+				<div class="error-message">
+					<strong>Error al parsear XML:</strong><br>
+					${err instanceof Error ? err.message : 'Error desconocido'}
+				</div>
+			`;
+			console.error(err);
+		}
+	}
+
+	function handleTab(e: KeyboardEvent) {
+		if (e.key === 'Tab') {
+			e.preventDefault();
+			
+			const start = input.selectionStart;
+			const end = input.selectionEnd;
+			const value = input.value;
+			
+			input.value = value.substring(0, start) + '    ' + value.substring(end);
+			input.selectionStart = input.selectionEnd = start + 4;
+			
+			updateLineNumbers();
+			updateOutput();
+		} else if (e.ctrlKey && e.key === '¡') {
+			e.preventDefault();
+			
+			const start = input.selectionStart;
+
+			input.value = '    ' + input.value;
+			input.selectionStart = input.selectionEnd = start + 4;
+			
+			updateLineNumbers();
+			updateOutput();
+		} else if (e.ctrlKey && e.key === '\'') {
+			e.preventDefault();
+			
+			const start = input.selectionStart;
+
+			if (input.value.startsWith('    ')) input.value = input.value.slice(4);
+
+			input.selectionStart = input.selectionEnd = start + 4;
+			
+			updateLineNumbers();
+			updateOutput();
+		}
+	}
+
+	function formatXML() {
+		if (!input) return;
+		
+		try {
+			const xml = input.value.trim();
+			if (!xml) return;
+
+			let formatted = '';
+			let indent = 0;
+			const lines = xml.replace(/>\s*</g, '>\n<').split('\n');
+			
+			lines.forEach(line => {
+				const trimmed = line.trim();
+				if (!trimmed) return;
+				
+				if (trimmed.startsWith('</')) {
+					indent = Math.max(0, indent - 1);
+				}
+				
+				formatted += '    '.repeat(indent) + trimmed + '\n';
+				
+				if (trimmed.startsWith('<') && !trimmed.startsWith('</') && !trimmed.endsWith('/>')) {
+					indent++;
+				}
+			});
+			
+			input.value = formatted.trim();
+			updateLineNumbers();
+			updateOutput();
+		} catch (err) {
+			console.error('Error al formatear:', err);
+		}
+	}
+
+	function handleTagCompletion(e: any) {
+		const input = e.target;
+		const value = input.value;
+		const cursor = input.selectionStart;
+		
+		if (value[cursor - 1] === '>' && !(value[cursor + 1] && value[cursor + 1] != '<')) {
+			
+			let openBracketIndex = value.lastIndexOf('<', cursor - 2);
+			
+			if (openBracketIndex === -1 || value[openBracketIndex + 1] === '/') {
+				return;
+			}
+
+			const tagContent = value.substring(openBracketIndex + 1, cursor - 1);
+			const tagNameMatch = tagContent.match(/^[a-zA-Z0-9_\-:]+/);
+			
+			if (!tagNameMatch) {
+				return;
+			}
+
+			const tagName = tagNameMatch[0];
+			const selfClosingTags = ['br', 'hr', 'img', 'input', 'meta', 'link', 'base', 'area', 'col', 'source', 'track', 'wbr', 'xml', 'br', 'hr', 'img', 'input', 'meta', 'link', 'base', 'area', 'col', 'source', 'track', 'wbr']; 
+			if (selfClosingTags.includes(tagName.toLowerCase())) {
+				return;
+			}
+			
+			const closeTag = `</${tagName}>`;
+			const newValue = value.substring(0, cursor) + closeTag + value.substring(cursor);
+			input.value = newValue;
+			input.selectionStart = input.selectionEnd = cursor;
+		}
+	}
+
+	function clearEditor() {
+		if (!input) return;
+		input.value = '';
+		updateLineNumbers();
+		updateOutput();
+		input.focus();
+	}
+
+	async function copyContent() {
+		if (!input) return;
+		
+		try {
+			await navigator.clipboard.writeText(input.value);
+			
+			if (copyBtn) {
+				const originalText = copyBtn.textContent;
+				copyBtn.textContent = '✓ Copiado';
+				setTimeout(() => {
+					copyBtn.textContent = originalText;
+				}, 2000);
+			}
+		} catch (err) {
+			console.error('Error al copiar:', err);
+		}
+	}
+
+	async function DownloadXML() {
+		const blob = new Blob([ `<?xml version="1.0" encoding="UTF-8"?>\n\n${input.value}` ], { type: 'text/xml' });
+		const url = URL.createObjectURL(blob);
+		const elementoEnlace = document.createElement('a');
+
+		elementoEnlace.href = url;
+		elementoEnlace.download = 'document.xml'; 
+
+		document.body.appendChild(elementoEnlace);
+		elementoEnlace.click();
+		document.body.removeChild(elementoEnlace);
+		URL.revokeObjectURL(url);
+	}
+
+	if (input) {
+		input.addEventListener('input', (e) => {
+			handleTagCompletion(e);
+			updateLineNumbers();
+			updateOutput();
+		});
+		
+		input.addEventListener('scroll', syncScroll);
+		input.addEventListener('keydown', handleTab);
+		input.addEventListener('keydown', (e) => {
+			if (e.ctrlKey && e.shiftKey && e.key === 'F') {
+				e.preventDefault();
+				formatXML();
+			}
+		});
+	}
+
+	if (formatBtn) formatBtn.addEventListener('click', formatXML);
+	if (clearBtn) clearBtn.addEventListener('click', clearEditor);
+	if (copyBtn) copyBtn.addEventListener('click', copyContent);
+	if (downloadBtn) downloadBtn.addEventListener('click', DownloadXML);
+
+	updateLineNumbers();
+	updateOutput();
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initInteractivity);
+	} else {
+		initInteractivity();
+	}
+
+	function initInteractivity() {
+		const accordionHeaders = document.querySelectorAll('.doc-accordion-header');
+		
+		accordionHeaders.forEach(header => {
+			const content = document.getElementById(header.getAttribute('data-target') || '');
+			if (content && header.parentElement?.parentElement?.querySelector('.doc-accordion-item:first-child .doc-accordion-header') === header) {
+				content.classList.add('active');
+				header.classList.add('active');
+				const icon = header.querySelector('.doc-accordion-icon');
+				if (icon) {
+					icon.style.transform = 'rotate(180deg)';
+				}
+			}
+			
+			header.addEventListener('click', () => {
+				const targetId = header.getAttribute('data-target');
+				const content = targetId ? document.getElementById(targetId) : null;
+				const icon = header.querySelector('.doc-accordion-icon');
+				
+				if (content) {
+					const isActive = content.classList.contains('active');
+					const accordion = header.closest('.doc-accordion');
+
+					if (accordion) {
+						const allContents = accordion.querySelectorAll('.doc-accordion-content');
+						const allHeaders = accordion.querySelectorAll('.doc-accordion-header');
+						const allIcons = accordion.querySelectorAll('.doc-accordion-icon');
+						
+						allContents.forEach(c => {
+							c.classList.remove('active');
+							c.style.maxHeight = '0';
+						});
+
+						allHeaders.forEach(h => h.classList.remove('active'));
+						allIcons.forEach(i => i.style.transform = 'rotate(0deg)');
+					}
+					
+					if (!isActive) {
+						content.classList.add('active');
+						content.style.maxHeight = content.scrollHeight + 'px';
+						header.classList.add('active');
+
+						if (icon) {
+							icon.style.transform = 'rotate(180deg)';
+						}
+					}
+				}
+			});
+		});
+
+		const tabButtons = document.querySelectorAll('.doc-tab-button');
+		
+		tabButtons.forEach((button, index) => {
+			if (index === 0) {
+				button.classList.add('active');
+
+				const tabId = button.getAttribute('data-tab');
+
+				if (tabId) {
+					const targetPanel = document.getElementById(tabId);
+
+					if (targetPanel) {
+						targetPanel.classList.add('active');
+					}
+				}
+			}
+			
+			button.addEventListener('click', () => {
+				const tabId = button.getAttribute('data-tab');
+				const tabsContainer = button.closest('.doc-tabs');
+				
+				if (!tabsContainer || !tabId) return;
+				
+				const allButtons = tabsContainer.querySelectorAll('.doc-tab-button');
+				const allPanels = tabsContainer.querySelectorAll('.doc-tab-panel');
+				
+				allButtons.forEach(btn => btn.classList.remove('active'));
+				allPanels.forEach(panel => panel.classList.remove('active'));
+				
+				button.classList.add('active');
+
+				const targetPanel = document.getElementById(tabId);
+
+				if (targetPanel) {
+					targetPanel.classList.add('active');
+				}
+			});
+		});
+
+		const accordionContents = document.querySelectorAll('.doc-accordion-content');
+		accordionContents.forEach(content => {
+			content.addEventListener('transitionend', () => {
+				if (content.classList.contains('active')) {
+					content.style.maxHeight = 'none';
+				}
+			});
+		});
+	}
+
+	if (typeof MutationObserver !== 'undefined') {
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.addedNodes.length) {
+					initInteractivity();
+				}
+			});
+		});
+		
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true
+		});
+	}
+
+</script>

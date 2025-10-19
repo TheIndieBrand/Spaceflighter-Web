@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <card>
+            <tip>Recuerda que puedes editar un XML a tiempo real en nuestro editor integrado.</tip>
+            <linkbutton href="/editor" variant="primary">
+                Ir al Editor
+            </linkbutton>
+        </card>
+
+        <title2>Cuerpo de un XML</title2>
+        <p>El cuerpo de un XML es la estructura básica que debe tener cada fichero antes de definir un contenido.</p>
+        <note>
+            Debes saber que las segundas etiquetas "document" y "section" no están cerradas por limitaciones del parser. Si encuentras esas etiquetas en esta documentación no tendrán el cierre correctamente, deberás hacerlo de forma manual.
+            <blockquote>Una etiqueta de cierre termina con el mismo nombre de la etiqueta iniciado por una barra diagonal (Por ejemplo: "</etiqueta>").</blockquote>
+        </note>
+        <code lang="xml"><?xml version="1.0" encoding="UTF-8"?>
+<document>
+
+    <title>Mi Wiki</title> // Puedes agregarle un título al XML, pero no es necesario.
+    <section>
+        // Aquí puedes comenzar a agregar contenido
+    <section>
+<document>
+</code>
+
+        <title2>Autores de un XML</title2>
+        <p>Todos los XML de la Wiki tendrán autores y colaboradores. Con lo cual, se ha decidido que todo autor y colaborador pueda dejar un legado si lo desea.</p>
+        <code lang="xml"><?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Mi nick</nickname>
+            <rol>Creador</rol> // Se pueden asignar los roles "Creador" o "Colaborador"
+        </author>
+        <author>
+            <nickname>Otro nick</nickname>
+            <rol>Colaborador</rol> // Otro ejemplo, pero esta vez un Colaborador
+        </author>
+        // ... se pueden agregar todos los que se desee
+    </authors>
+
+    <title>Mi Wiki</title>
+    <section>
+        // Aquí puedes comenzar a agregar contenido
+    <section>
+<document>
+</code>
+
+        <title2>Texto plano</title2>
+        <code lang="xml"><title1>Esto es un título 1</title1>
+<title2>Esto es un título 2</title2>
+<title3>Esto es un título 3</title3>
+<title4>Esto es un título 4</title4>
+<title5>Esto es un título 5</title5>
+<title6>Esto es un título 6</title6>
+<p>Esto es un párrafo</p>
+</code>
+        <card>
+            <title1>Esto es un título 1</title1>
+            <title2>Esto es un título 2</title2>
+            <title3>Esto es un título 3</title3>
+            <title4>Esto es un título 4</title4>
+            <title5>Esto es un título 5</title5>
+            <title6>Esto es un título 6</title6>
+            <p>Esto es un párrafo</p>
+        </card>
+
+        <title2>Notas</title2>
+        <code lang="xml"><note>Esto es una nota básica. Úsala para resaltar información importante.</note>
+<tip>Este es un tip. Úsalo para consejos y mejores prácticas.</tip>
+<warning>Este es un aviso. Úsalo para advertir.</warning>
+<danger>Este es un mensaje de peligro. Úsalo para advertencias críticas.</danger>
+</code>
+        <card>
+            <note>Esto es una nota básica. Úsala para resaltar información importante.</note>
+            <tip>Este es un tip. Úsalo para consejos y mejores prácticas.</tip>
+            <warning>Este es un aviso. Úsalo para advertir.</warning>
+            <danger>Este es un mensaje de peligro. Úsalo para advertencias crítics.</danger>
+        </card>
+
+        <p>Además, dentro de las notas puedes poner cualquier cosa.</p>
+        <card>
+            <note>
+                Una nota.
+                <tip>Un tip dentro de una nota.</tip>
+            </note>
+        </card>
+
+        <title2>Tablas</title2>
+        <code lang="xml"><table>
+    <header>
+        <cell>Método</cell>
+        <cell>Descripción</cell>
+        <cell>Retorno</cell>
+    </header>
+    <row>
+        <cell>get()</cell>
+        <cell>Obtiene un valor</cell>
+        <cell>any</cell>
+    </row>
+    <row>
+        <cell>set()</cell>
+        <cell>Establece un valor</cell>
+        <cell>void</cell>
+    </row>
+    <row>
+        <cell>delete()</cell>
+        <cell>Elimina un valor</cell>
+        <cell>boolean</cell>
+    </row>
+</table>
+</code>
+        <card>
+            <table>
+                <header>
+                    <cell>Método</cell>
+                    <cell>Descripción</cell>
+                    <cell>Retorno</cell>
+                </header>
+                <row>
+                    <cell>get()</cell>
+                    <cell>Obtiene un valor</cell>
+                    <cell>any</cell>
+                </row>
+                <row>
+                    <cell>set()</cell>
+                    <cell>Establece un valor</cell>
+                    <cell>void</cell>
+                </row>
+                <row>
+                    <cell>delete()</cell>
+                    <cell>Elimina un valor</cell>
+                    <cell>boolean</cell>
+                </row>
+            </table>
+        </card>
+
+        <title2>Insignias</title2>
+        <code lang="xml"><p>
+    Los badges son útiles para marcar estados:
+    <badge type="new">Nuevo</badge>
+    <badge type="deprecated">Obsoleto</badge>
+    <badge type="demo">Demo</badge>
+    <badge type="minimal">Minimal</badge>
+    <badge type="experimental">Experimental</badge>
+</p>
+</code>
+        <card>
+            <p>
+                Los badges son útiles para marcar estados:
+                <badge type="new">Nuevo</badge>
+                <badge type="deprecated">Obsoleto</badge>
+                <badge type="demo">Demo</badge>
+                <badge type="minimal">Minimal</badge>
+                <badge type="experimental">Experimental</badge>
+            </p>
+        </card>
+
+        <title2>Citas</title2>
+        <code lang="xml"><blockquote>
+    Los programadores engreídos pueden comerme el c*lo entero - Alva Majo
+</blockquote>
+</code>
+        <card>
+            <blockquote>
+                Los programadores engreídos pueden comerme el c*lo entero - Alva Majo
+            </blockquote>
+        </card>
+
+        <title2>Tarjeta</title2>
+
+        <code lang="xml"><card>
+    <title>Rápido y Eficiente</title>
+    <content>Optimizado para alto rendimiento y velocidad de ejecución.</content>
+</card>
+</code>
+        <card>
+            <title>Rápido y Eficiente</title>
+            <content>Optimizado para alto rendimiento y velocidad de ejecución.</content>
+        </card>
+
+        <title3>Cuadrícula de tarjetas</title3>
+        <code lang="xml"><cardgrid>
+    <card>
+        <title>Configurable</title>
+        <content>Altamente personalizable según tus necesidades.</content>
+    </card>
+    <card>
+        <title>Seguro</title>
+        <content>Construido con las mejores prácticas de seguridad.</content>
+    </card>
+    <card>
+        <title>Developer Friendly</title>
+        <content>API intuitiva y fácil de usar para desarrolladores.</content>
+    </card>
+</cardgrid>
+</code>
+
+        <cardgrid>
+            <card>
+                <title>Configurable</title>
+                <content>Altamente personalizable según tus necesidades.</content>
+            </card>
+            <card>
+                <title>Seguro</title>
+                <content>Construido con las mejores prácticas de seguridad.</content>
+            </card>
+            <card>
+                <title>Developer Friendly</title>
+                <content>API intuitiva y fácil de usar para desarrolladores.</content>
+            </card>
+        </cardgrid>
+
+        <title2>Acordeones</title2>
+        <code lang="xml"><accordion>
+    <item>
+        <title>¿Qué es un collector?</title>
+        <content>
+            Un collector es un componente que recopila interacciones.
+        </content>
+    </item>
+    <item>
+        <title>¿Cómo funciona?</title>
+        <content>
+            Los collectors escuchan eventos específicos y ejecutan callbacks.
+        </content>
+    </item>
+    <item>
+        <title>¿Cuándo usarlos?</title>
+        <content>
+            Cuando se necesita manejar interacciones complejas con componentes.
+        </content>
+    </item>
+</accordion>
+</code>
+        <card>
+            <accordion>
+                <item>
+                    <title>¿Qué es un collector?</title>
+                    <content>
+                        Un collector es un componente que recopila interacciones.
+                    </content>
+                </item>
+                <item>
+                    <title>¿Cómo funciona?</title>
+                    <content>
+                        Los collectors escuchan eventos específicos y ejecutan callbacks.
+                    </content>
+                </item>
+                <item>
+                    <title>¿Cuándo usarlos?</title>
+                    <content>
+                        Cuando se necesita manejar interacciones complejas con componentes.
+                    </content>
+                </item>
+            </accordion>
+        </card>
+
+        <title2>Bloques de código</title2>
+        <note>La segunda etiqueta "code" no está cerrada por limitaciones del parser.</note>
+        <code lang="xml"><code lang="typescript">
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+
+    const user: User = {
+        id: 1,
+        name: "John Doe",
+        email: "john@example.com"
+    };
+<code>
+</code>
+        <card>
+            <code lang="typescript">interface User {
+    id: number;
+    name: string;
+    email: string;
+}
+
+const user: User = {
+    id: 1,
+    name: "John Doe",
+    email: "john@example.com"
+};</code>
+        </card>
+
+        <title2>Link Buttons</title2>
+        <code lang="xml"><p>Diferentes variantes de botones:</p>
+
+<linkbutton href="https://example.com" variant="primary">
+    Ver Documentación
+</linkbutton>
+
+<linkbutton href="https://example.com" variant="secondary">
+    Ejemplos
+</linkbutton>
+
+<linkbutton href="https://example.com" variant="minimal">
+    Más información
+</linkbutton>
+</code>
+
+        <card>
+            <p>Diferentes variantes de botones:</p>
+            <linkbutton href="https://example.com" variant="primary">
+                Ver Documentación
+            </linkbutton>
+
+            <linkbutton href="https://example.com" variant="secondary">
+                Ejemplos
+            </linkbutton>
+
+            <linkbutton href="https://example.com" variant="minimal">
+                Más información
+            </linkbutton>
+        </card>
+
+        <title2>Tabs</title2>
+        <note>Las etiquetas "code" no están cerradas por limitaciones del parser.</note>
+        <code lang="xml"><tabs>
+    <tab>
+        <title>npm</title>
+        <content>
+            <code lang="cmd">npm install seyfert<code>
+        </content>
+    </tab>
+    <tab>
+        <title>yarn</title>
+        <content>
+            <code lang="cmd">yarn add seyfert<code>
+        </content>
+    </tab>
+    <tab>
+        <title>pnpm</title>
+        <content>
+            <code lang="cmd">pnpm add seyfert<code>
+        </content>
+    </tab>
+</tabs>
+</code>
+
+        <card>
+            <tabs>
+                <tab>
+                    <title>npm</title>
+                    <content>
+                        <code lang="cmd">npm install seyfert</code>
+                    </content>
+                </tab>
+                <tab>
+                    <title>yarn</title>
+                    <content>
+                        <code lang="cmd">yarn add seyfert</code>
+                    </content>
+                </tab>
+                <tab>
+                    <title>pnpm</title>
+                    <content>
+                        <code lang="cmd">pnpm add seyfert</code>
+                    </content>
+                </tab>
+            </tabs>
+        </card>
+
+        <title2>Listas</title2>
+        <title3>Lista Desordenada</title3>
+        <code lang="xml"><list>
+    <listitem>Primer elemento de la lista</listitem>
+    <listitem>Segundo elemento</listitem>
+    <listitem>Tercer elemento</listitem>
+</list>
+</code>
+
+        <card>
+            <list>
+                <listitem>Primer elemento de la lista</listitem>
+                <listitem>Segundo elemento</listitem>
+                <listitem>Tercer elemento</listitem>
+            </list>
+        </card>
+
+        <title3>Lista Ordenada</title3>
+        <code lang="xml"><olist>
+    <listitem>Paso uno del proceso</listitem>
+    <listitem>Paso dos del proceso</listitem>
+    <listitem>Paso tres del proceso</listitem>
+</olist>
+</code>
+
+        <card>
+            <olist>
+                <listitem>Paso uno del proceso</listitem>
+                <listitem>Paso dos del proceso</listitem>
+                <listitem>Paso tres del proceso</listitem>
+            </olist>
+        </card>
+
+        <title2>Componente de Pasos</title2>
+        <code lang="xml"><p>Ideal para tutoriales y guías paso a paso:</p>
+<steps>
+    <step>
+        <title3>Instalar dependencias</title3>
+        <p>Primero necesitas instalar todas las dependencias del proyecto.</p>
+        <code lang="bash">npm install<code>
+    </step>
+    
+    <step>
+        <title3>Configurar el entorno</title3>
+        <p>Crea un archivo de configuración con tus variables de entorno.</p>
+        <code lang="bash">cp .env.example .env<code>
+    </step>
+    
+    <step>
+        <title3>Ejecutar el proyecto</title3>
+        <p>Finalmente, inicia el servidor de desarrollo.</p>
+        <code lang="bash">npm run dev<code>
+    </step>
+</steps>
+</code>
+
+        <card>
+            <p>Ideal para tutoriales y guías paso a paso:</p>
+            <steps>
+                <step>
+                    <title3>Instalar dependencias</title3>
+                    <p>Primero necesitas instalar todas las dependencias del proyecto.</p>
+                    <code lang="bash">npm install</code>
+                </step>
+                
+                <step>
+                    <title3>Configurar el entorno</title3>
+                    <p>Crea un archivo de configuración con tus variables de entorno.</p>
+                    <code lang="bash">cp .env.example .env</code>
+                </step>
+                
+                <step>
+                    <title3>Ejecutar el proyecto</title3>
+                    <p>Finalmente, inicia el servidor de desarrollo.</p>
+                    <code lang="bash">npm run dev</code>
+                </step>
+            </steps>
+        </card>
+
+    </section>
+</document>

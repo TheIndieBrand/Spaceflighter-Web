@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<authors>
+		<author>
+			<nickname>Ether</nickname>
+			<rol>Creador</rol>
+		</author>
+	</authors>
+
+	<section>
+		<p>Bienvenido a la wiki oficial de Spaceflighter.</p>
+		<p>Aquí encontrarás toda la información sobre los sistemas del bot, ítems, misiones, etc.</p>
+		<line></line>
+		<title2>Wiki Colaborativa</title2>
+		<p>¡Así es! Aquí cualquier persona puede colaborar con la comunidad y compartir sus conocimientos sobre Spaceflighter</p>
+		<note>
+			<title3>¿Quieres colaborar en la Wiki de Spaceflighter?</title3>
+			<linkbutton href="/wiki/1.%20Inicio" variant="primary">
+				Comienza aquí
+			</linkbutton>
+		</note>
+	</section>
+</document>

@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { parseXmlToHtml } from "../../utils/xml-parser";
+import fs from "fs";
+import path from "path";
+
+export async function getStaticPaths() {
+	const docFilesPath = path.join(process.cwd(), "src", "docs");
+	const docFiles = fs.readdirSync(docFilesPath);
+	const paths: any[] = [];
+
+	function readPaths(dir: string[], _path: string) {
+		dir.forEach((file) => {
+			if (file.endsWith(".xml")) {
+				const name = file.replace(".xml", "");
+				paths.push({ params: { slug: name } });
+			} else if (!file.includes(".")) {
+				readPaths(fs.readdirSync(path.join(_path, file)), path.join(_path, file));
+			}
+		});
+	}
+
+	readPaths(docFiles, docFilesPath);
+	return paths;
+}
+
+const docFilesPath = path.join(process.cwd(), "src", "docs");
+const docFiles = fs.readdirSync(docFilesPath);
+const docs: any = [];
+
+function readDocs(dir: string[], _path: string, subfile: boolean) {
+	dir.forEach((file) => {
+		if (file.endsWith(".xml")) {
+			const name = file.replace(".xml", "");
+			const content = fs.readFileSync(path.join(_path, file), "utf-8");
+			const pushableObj = { slug: name, html: parseXmlToHtml(content) };
+			docs.push(subfile ? { ...pushableObj, dir: path.parse(_path).name } : pushableObj);
+		} else if (!file.includes(".")) {
+			readDocs(fs.readdirSync(path.join(_path, file)), path.join(_path, file), true);
+		}
+	});
+}
+
+readDocs(docFiles, docFilesPath, false);
+
+const { slug } = Astro.params;
+const current = docs.find((d: any) => d.slug === slug);
+
+if (!current) throw new Error(`Documento no encontrado: ${slug}`);
+---
+
+<Layout title="Spaceflighter - Wiki">
+	<DocsLayout title={current.title ?? current.slug} docs={docs} content={current.html} />
+</Layout>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+	hljs.highlightAll();
+</script>
