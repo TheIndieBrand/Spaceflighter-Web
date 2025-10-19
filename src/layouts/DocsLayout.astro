@@ -40,7 +40,7 @@ const { title, docs, content } = Astro.props;
     </div>
 </section>
 
-<script>
+<script client:load>
     document.addEventListener('DOMContentLoaded', () => {
         const docContent = document.querySelector('.doc-content');
         const tocContainer = document.getElementById('tableOfContents');
