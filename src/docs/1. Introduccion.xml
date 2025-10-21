@@ -1,21 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <document>
-    <title1>¡Bienvenido a la documentación oficial de Spaceflighter!</title1>
-        <p>Aquí encontrarás todo lo relacionado con Spaceflighter: desde recursos importantes hasta guías detalladas, además de consejos útiles que facilitarán tu recorrido.</p>
-            <title1>Comunidad y soporte oficial</title1>
-                <p>Si tienes alguna duda adicional o necesitas ayuda con Spaceflighter, puedes visitar su servidor oficial de Discord, donde podrás resolver todo tipo de inquietudes y recibir apoyo de la comunidad.</p>
-                    <linkbutton href="https://discord.gg/NmVNuxSDw6" variant="primary">
-                        Invitación a el soporte oficial
-                    </linkbutton>
-                    <title1>Contribuidores</title1>
-                        <p>Esta documentación es posible gracias a la comunidad que colabora en su creación. Los siguientes miembros han dedicado su esfuerzo y tiempo para apoyar este proyecto:</p>
-                            <list>
-                                <listitem>Ether</listitem>
-                                    <listitem>zPro</listitem>
-                                    </list>
-                                    <p>Además, tú, como usuario, puedes constribuir a mejorar y ampliar esta documentación.</p>
-                                        <title3>¿Como puedo hacerlo?</title3>
-                                            <p>Simplemente sigue los pasos que se te muestran aquí: </p>
-                                                <linkbutton href="http://65.109.80.126:20227/wiki/1.%20Inicio" variant=“primary">
-                                                    Comienza aquí
-                                                </linkbutton>
-                                            </document>
+	<authors>
+		<author>
+			<nickname>Ether</nickname>
+			<rol>Creador</rol>
+		</author>
+        <author>
+			<nickname>zPro</nickname>
+			<rol>Colaborador</rol>
+		</author>
+	</authors>
+
+    <section>
+        <title1>¡Bienvenido a la Wiki oficial de Spaceflighter!</title1>
+        <p>Aquí encontrarás toda la información relacionada con Spaceflighter: desde recursos importantes hasta guías detalladas, además de consejos útiles que facilitarán tu recorrido.</p>
+        <line></line>
+
+        <title2>Comunidad y soporte oficial</title2>
+        <p>Si tienes alguna duda adicional o necesitas ayuda con Spaceflighter, puedes visitar su servidor oficial de Discord, donde podrás resolver todo tipo de inquietudes y recibir apoyo de la comunidad.</p>
+        <linkbutton href="https://discord.gg/NmVNuxSDw6" variant="primary">
+            Invitación a el soporte oficial
+        </linkbutton>
+        <line></line>
+
+        <title2>Wiki Colaborativa</title2>
+        <p>Esta Wiki es posible gracias a la comunidad que colabora en su creación. Esto es un proyecto colaborativo donde cualquier persona puede contribuir y compartir sus conocimientos sobre Spaceflighter.</p>
+            <note>
+                <title3>¿Quieres colaborar en la Wiki de Spaceflighter?</title3>
+                <p>Tú, como usuario, puedes constribuir a mejorar y ampliar esta documentación.</p>
+                <linkbutton href="/wiki/1.%20Inicio" variant="primary">
+                    Comienza aquí
+                </linkbutton>
+            </note>
+    </section>
+</document>
