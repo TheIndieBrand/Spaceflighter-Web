@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<authors>
+    <author>
+        <nickname>diamondclass</nickname>
+        <rol>Usuario</rol>
+    </author>
+</authors>
+
+<title1>Introducción al sistema económico</title1>
+<section>
+    <p>El sistema económico del bot es un tema extenso, sin embargo lo podemos resumir fácilmente. Aunque minimamente se recomienda tener un sistema armado como el próximo:</p>
+    <card>
+        <title>Actividad constante</title>
+        <content>El sistema de económia requiere una actividad minima constante para mantenerse; de no hacerlo, ¡podrias perder dinero!</content>
+    </card>
+    <card>
+        <title>Un objetivo claro</title>
+        <content>No puedes ir a por todas directamente, debes de enfocarte en un objetivo claro, aún así sea completar las misiones diarias.</content>
+    </card>
+    <card>
+        <title>Evaluar precios</title>
+        <content>Debes de ver donde te conviene comprar y vender. Aqui no regalamos el dinero.</content>
+    </card>
+    <p>Teniendo esto en claro, ¡debes de empezar tu trayectoria!</p>
+</section>
+<section>
+    <title3>¿Cómo inicio mi economia?</title3>
+    <p>Debemos entender que el bot se basa en un sistema económico capitalista, donde la venta y explotación del producto son las bases de nuestra supervivencia. Entonces, ¿Qué hago?</p>
+    <steps>
+        <step>
+            <title6>1er Paso</title6>
+            Al ya tener creada nuestra compañia, nuestro primer paso será usar el comando "/laboratory" y allí comprar la mejora de bosque
+        </step>
+        <step>
+            <title6>2do Paso</title6>
+            Una vez creado nuestro bosque, recolectaremos usando "/resources forest". Nuestro objetivo es acumular y vender la mayor cantidad de madera. ¿Dónde? En la recicladora.
+        </step>
+        <step>
+            <title6>3er Paso</title6>
+            Usando la recicladora: Esta se usa mediante el comando "/workshop recycler"
+        </step>
+        <step>
+            <title6>4to Paso</title6>
+            Al ya haber vendido algo de nuestra medera, empezaremos a desbloquear nuevas cosas. Es importante y como primer objetivo conseguir la mina pues nos permitirá avanzar mucho más rápido.
+        </step>
+    </steps>
+</section>
+<section>
+    <title3>Bien, desbloquee la mina y seguí los pasos, ¿Qué prosigue?</title3>
+    <p>El avance no es lento, no esperes que lo sea, sin embargo hay 2 métodos para avanzar: Tryhard y Chill. Como el método "Chill" es para mileuristas, aqui explicaremos el "Tryhard":</p>
+    <p>Si bien no es muy realista, con este método ganaremos más dinero y es el más eficaz. Este consiste en básicamente estar al pendiente de la mina y localshop los primeros 7 dias mientras que a su vez completas las distintas misiones las cuales te darán monedas y éstas las podrás intercambiar por dinero y así seguir.</p>
+    <tip>Énfocate y mejora siempre el inventario de la mina. Los humanos dormimos generalmente 8 horas, esas son 8 horas donde el bot seguirá produciendo para tí, úsalo.</tip>
+    <warning>Debes de saber que al dia de la fecha (21/10/25), aún no se ha publicado los viajes espaciales, por lo que no es algo necesario en estos momentos y no deberias de dedicarle el tiempo a ello. Sin embargo, si te lo puedes permitir, estás habilitado..</warning>
+</section>
