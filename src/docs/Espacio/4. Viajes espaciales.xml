@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Hay varios subcomandos dentro del comando space, el cual te permitirá gestionar tu cohete en el espacio:</p>
+        <table>
+            <header>
+                <cell>Comando</cell>
+                <cell>Función</cell>
+            </header>
+            <row>
+                <cell><badge type="experimental">/space info</badge><badge type="new">Nuevo</badge></cell>
+                <cell>Este comando permite ver si tu cohete está en movimiento o no. Muestra las coordenadas, la velocidad a la que se mueve, la hora a la que llegará, etc.</cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/space move</badge><badge type="new">Nuevo</badge></cell>
+                <cell>Permite seleccionar un planeta de tu sistema solar para llevar tu cohete ahí. Este comando muestra información relevante del movimiento y del planeta.</cell>
+            </row>
+        </table>
+
+        <note>
+            <p>Cada vez que se trata de ejecutar un comando como "/planet" o "/space", los cohetes que puedan estar en movimiento en tu sistema solar se actualizan sin necesidad de solicitarlo.</p>
+            <p>Es decir, es probable que si tu cohete estaba en movimiento hace 4 horas y ya no aparece en el comando "/space info", ya estará disponible en el comando "/planet orbit". El planeta aparecerá con un mensaje en paréntesis: "Cohete en órbita".</p>
+        </note>
+
+        <card>
+            <title>Siguiente punto: Alienígenas.</title>
+            <content>
+                <linkbutton href="/wiki/5.%20Alienígenas" variant="primary">
+                    5. Alienígenas
+                </linkbutton>
+            </content>
+        </card>
+    </section>
+</document>

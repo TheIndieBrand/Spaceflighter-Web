@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Rensga7</nickname>
+            <rol>Creador</rol>
+        </author>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Colaborador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <title1>Mina nivel 1</title1>
+        <card>
+            <title3>Mina nivel 1</title3>
+            <content>¿Cómo genero minerales? ¿Qué materiales recolecto?</content>
+            <note>Para poder utilizar la Mina nivel 1 debes haberla desbloqueado utilizando el laboratorio (/laboratory)</note>
+        </card>
+        <card>
+            <title3>Descripción de la Mina nivel 1</title3>
+            <blockquote>Una mina algo cutre con a penas un par de metros de profundidad. Las herramientas son rudimentarias y el material es muy común.</blockquote>
+        </card>
+        <card>
+            <title3>¿Qué materiales puedo recolectar en la Mina nivel 1?</title3>
+            <table>
+                <header>
+                    <cell>Item</cell>
+                    <cell>Probabilidad</cell>
+                    <cell>Maximo de items por recolecta</cell>
+                </header>
+                <row>
+                    <cell>Moneda vieja</cell>
+                    <cell>3%</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell>Tela sucia</cell>
+                    <cell>5%</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell>Bota</cell>
+                    <cell>10%</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell>Plastico usado</cell>
+                    <cell>15%</cell>
+                    <cell>2</cell>
+                </row>
+                <row>
+                    <cell>Carbon</cell>
+                    <cell>50%</cell>
+                    <cell>2</cell>
+                </row>
+                <row>
+                    <cell>Roca</cell>
+                    <cell>100%</cell>
+                    <cell>7</cell>
+                </row>
+            </table>
+        </card>
+        <card>
+            <title3>¿Cuál es el máximo de materiales que se puede recolectar en la Mina nivel 1?</title3>
+            <content><p>En la mina Nivel 1 puedes generar un máximo de 16 items cada 5 minutos, para un máximo de 50 items</p></content>
+            <note>Para recolectar el máximo de items (50), necesitas esperar 20 minutos.</note>
+        </card>
+        <card>
+            <title4>¿Cuáles son las opciones de mejora?</title4>
+                <accordion>
+                    <item>
+                        <title>Mejorar mediante Kael, el ingeniero.</title>
+                        <content>
+                            El costo de mejorar la mina nivel 1 mediante Kael, el ingeniero, es de **100 monedas**.
+                            <blockquote>Esto nos da +5 de almacenamiento en la mina nivel 1.</blockquote>
+                        </content>
+                    </item>
+                    <item>
+                        <title>Mejorar la mina nivel 1 a la mina nivel 2.</title>
+                        <content>
+                            Los recursos que se necesitan para mejorar la mina nivel 1 a la mina nivel 2 son:
+                            <list>
+                                <listitem>Madera (20)</listitem>
+                                <listitem>Roca (5)</listitem>
+                                <listitem>Arcilla (2)</listitem>
+                            </list>
+                            <blockquote>Esto nos desbloquea la mina nivel 2.</blockquote>
+                        </content>
+                    </item>
+                </accordion>
+        </card>
+    </section>
+</document>

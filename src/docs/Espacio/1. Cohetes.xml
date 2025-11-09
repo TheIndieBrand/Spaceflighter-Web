@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Hay varios tipos de cohetes que permitirán cumplir distintas funciones:</p>
+        <table>
+            <header>
+                <cell>Nombre</cell>
+                <cell>Tipo</cell>
+            </header>
+            <row>
+                <cell>Impulsor Primario I</cell>
+                <cell>Transporte</cell>
+            </row>
+            <row>
+                <cell>Zareker I <badge type="new">Nuevo</badge></cell>
+                <cell>Armado</cell>
+            </row>
+            <row>
+                <cell>Zareker II <badge type="new">Nuevo</badge></cell>
+                <cell>Armado</cell>
+            </row>
+            <row>
+                <cell>K0-Attack <badge type="new">Nuevo</badge></cell>
+                <cell>Kamikaze</cell>
+            </row>
+        </table>
+
+        <title2>Tipos de cohetes</title2>
+        <tabs>
+            <tab>
+                <title>Transporte</title>
+                <content>
+                    <p>Los cohetes de transporte cumplen la función de mover ítems de lugar en lugar. Incluso puede cumplir la función de interceptor para descubrir nuevos planetas y evitar poner en riesgo cohetes más importantes.</p>
+                    <note>Transportar ítems con los cohetes carece de utilidad a día de hoy (Versión 1.0.1-alpha). Esto se debe a que el inventario se comparte con todos los planetas. Próximamente cambiará el inventario compartido a un inventario por planeta.</note>
+                    <p>Partes que incluye este cohete:</p>
+                    <list>
+                        <listitem>Cabina</listitem>
+                        <listitem>Tanque de combustible</listitem>
+                        <listitem>Propulsor primitivo</listitem>
+                    </list>
+                </content>
+            </tab>
+            <tab>
+                <title>Armado <badge type="new">Nuevo</badge></title>
+                <content>
+                    <p>Los cohetes armados permiten atacar alienigenas en planetas u otros cohetes. Cuando una parte se daña, deja de ser operativo y se devuelve al inventario de la compañía.</p>
+                    <p>Partes que incluye este cohete:</p>
+                    <list>
+                        <listitem>Cabina</listitem>
+                        <listitem>Tanque de combustible</listitem>
+                        <listitem>Espacio para torreta</listitem>
+                        <listitem>Propulsor primitivo</listitem>
+                    </list>
+
+                    <title3>¿Qué armas permiten cada cohete?</title3>
+                    <table>
+                        <header>
+                            <cell>Nombre</cell>
+                            <cell>Armas permitidas</cell>
+                        </header>
+                        <row>
+                            <cell>Zareker I <badge type="new">Nuevo</badge></cell>
+                            <cell>Beretta 9mm</cell>
+                        </row>
+                        <row>
+                            <cell>Zareker II <badge type="new">Nuevo</badge></cell>
+                            <cell>AR-15</cell>
+                        </row>
+                    </table>
+                </content>
+            </tab>
+            <tab>
+                <title>Kamikaze <badge type="new">Nuevo</badge></title>
+                <content>
+                    <p>Los cohetes Kamikazes solo pueden estrellarse contra cohetes o alienigenas.</p>
+                    <p>Estos cohetes solo pueden cargar en la cabina los siguientes ítems:</p>
+                    <list>
+                        <listitem>TNT</listitem>
+                        <listitem>Nido de TNT</listitem>
+                    </list>
+                    <p>Mientras más TNT haya en la cabina, más daño hará la explosión y más radio tendrá.</p>
+                    <list>
+                        <listitem>Cabina</listitem>
+                        <listitem>Tanque de combustible</listitem>
+                        <listitem>Propulsor primitivo</listitem>
+                    </list>
+                </content>
+            </tab>
+        </tabs>
+
+        <card>
+            <title>Siguiente página: Gestionar tu plataforma de lanzamiento.</title>
+            <content>
+                <linkbutton href="/wiki/2.%20Plataforma%20de%20lanzamiento" variant="primary">
+                    2. Plataforma de lanzamiento
+                </linkbutton>
+            </content>
+        </card>
+    </section>
+</document>

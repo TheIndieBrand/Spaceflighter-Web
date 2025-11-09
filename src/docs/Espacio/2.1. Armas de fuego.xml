@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Estas son las armas disponibles en el juego:</p>
+
+        <accordion>
+            <item>
+                <title>Beretta 9mm <badge type="new">Nuevo</badge></title>
+                <content>
+                    <p>Es una arma simple con modo de disparo "single", con daño bajo pero abundante.</p>
+                    <p>Puede obtenerse explorando en estructuras o comprándoselo a Zarek al nivel 9 por 50k.</p>
+                    <separator></separator>
+                    <p>Balas permitidas:</p>
+                    <list>
+                        <listitem>Bala 9mm</listitem>
+                    </list>
+                    <p>Caben 17 balas en el cargador.</p>
+                </content>
+            </item>
+            <item>
+                <title>AR-15 <badge type="new">Nuevo</badge></title>
+                <content>
+                    <p>Es una arma más avanzada con un modo de disparo "automatic", con daño decente aunque menos abundante.</p>
+                    <p>Puede obtenerse explorando en estructuras o comprándoselo a Zarek al nivel 10 por 150k.</p>
+                    <separator></separator>
+                    <p>Balas permitidas:</p>
+                    <list>
+                        <listitem>Bala 5.45mm</listitem>
+                    </list>
+                    <p>Caben 30 balas en el cargador.</p>
+                </content>
+            </item>
+        </accordion>
+        <line></line>
+
+        <title2>Gestión de cargadores</title2>
+        <p>Cada cargador tiene un máximo de balas que entran en él.</p>
+        <p>En todos los cargadores de las armas se pueden agregar varias variantes de balas siempre y cuando el arma las permita.</p>
+        <p>Descargar o recargar un arma no repercute en la recámara del arma. Si amartillas un arma con el cargador vacío, ninguna bala se agrega. Si el cargador tiene balas y se amartilla el arma, una bala del cargador pasa a la recámara.</p>
+        <p>Si el cargador tiene como máximo 17 balas, la cantidad de balas máximas que se pueden guardar en esta será una más. 18 gracias a la recámara.</p>
+
+        <line></line>
+        <card>
+            <title>Siguiente punto: Órbitas.</title>
+            <content>
+                <linkbutton href="/wiki/3.%20Órbitas" variant="primary">
+                    3. Órbitas
+                </linkbutton>
+            </content>
+        </card>
+    </section>
+</document>

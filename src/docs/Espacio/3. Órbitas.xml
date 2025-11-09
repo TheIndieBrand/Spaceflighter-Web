@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Cada planeta tiene su propia órbita. Tu planeta inicial tiene una órbita protegida. Es decir, ningún cohete ajeno puede acceder a esta ni conquistar el planeta.</p>
+        <p>Una ver un cohete se monta en la plataforma y está disponible para ser lanzado, tu cohete se agrega a la órbita del planeta del que se lanzó.</p>
+        <p>Con el comando "/planet orbit", podrá darte varias acciones disponibles:</p>
+
+        <accordion>
+            <item>
+                <title>Reentrada</title>
+                <content>Si el planeta te pertenece, puedes realizar una reentrada y el cohete aparecerá en la plataforma de lanzamiento de este.</content>
+            </item>
+            <item>
+                <title>Autodestruir</title>
+                <content>Permite autodestruir el cohete. Hacerlo desaparecer sin que vuelva a tu inventario.</content>
+            </item>
+            <item>
+                <title>Lanzar al espacio <badge type="new">Nuevo</badge></title>
+                <content>De esta forma, el cohete se envía al espacio y comienza a aparecer en el comando "/space" para gestionarlo.</content>
+            </item>
+            <item>
+                <title>Conquistar <badge type="new">Nuevo</badge></title>
+                <content>Permite apropiarse de un planeta si se lleva un cohete armado. Si no tiene plataforma de lanzamiento, se generará una y tu cohete se montará automáticamente ahí.</content>
+            </item>
+            <item>
+                <title>Estrellarse <badge type="new">Nuevo</badge></title>
+                <content>Si el cohete es de tipo Kamikaze, aparecerá esta opción para atacarlo. El cohete desaparecerá después del ataque.</content>
+            </item>
+        </accordion>
+
+        <cardgrid>
+            <card>
+                <title>Siguiente punto: Viajes espaciales.</title>
+                <content>
+                    <linkbutton href="/wiki/4.%20Viajes%20espaciales" variant="primary">
+                        4. Viajes espaciales
+                    </linkbutton>
+                </content>
+            </card>
+        </cardgrid>
+    </section>
+</document>

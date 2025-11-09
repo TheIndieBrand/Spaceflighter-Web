@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Aquí algunos datos sobre los combates entre alienígenas:</p>
+        <list>
+            <listitem>Los combates son por turnos: Primero el cohete, luego el alienígena.</listitem>
+            <listitem>Si una parte del cohete resulta dañada al completo, el combate termina.</listitem>
+            <listitem>Una vez el planeta quede libre de alienígenas, será conquistable.</listitem>
+            <listitem>Un arma se retroalimenta de las balas de la cabina. Si el arma queda sin balas, termina el turno. Si la cabina queda sin balas, termina el combate.</listitem>
+            <listitem>Si un alienígena tiene armadura y la bala no es penetrante, la armadura recibirá un daño leve y no afectará a su vida.</listitem>
+        </list>
+    </section>
+</document>

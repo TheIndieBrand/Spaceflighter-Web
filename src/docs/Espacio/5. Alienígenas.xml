@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <title2>Tipos de Alienígenas</title2>
+        <table>
+            <header>
+                <cell>Tipo</cell>
+                <cell>Descripción</cell>
+                <cell>Vida inicial</cell>
+                <cell>Armadura inicial</cell>
+                <cell>Daño</cell>
+                <cell>Penetración de blindaje</cell>
+                <cell>Experiencia</cell>
+            </header>
+            <row>
+                <cell>Scavenger</cell>
+                <cell>Un alienígena básico, poca vida y poco daño. Asímismo, poco loot.</cell>
+                <cell>100</cell>
+                <cell>0</cell>
+                <cell>20</cell>
+                <cell>0</cell>
+                <cell>300</cell>
+            </row>
+            <row>
+                <cell>Warrior</cell>
+                <cell>La versión mejorada del Scavenger. Puede dropear Cuerdas para crear TNT.</cell>
+                <cell>100</cell>
+                <cell>50</cell>
+                <cell>50</cell>
+                <cell>5</cell>
+                <cell>700</cell>
+            </row>
+            <row>
+                <cell>Elite</cell>
+                <cell>Un alienígena peligroso, mucha vida y bastante daño. Tiene una probabilidad de dropear una CPU.</cell>
+                <cell>150</cell>
+                <cell>100</cell>
+                <cell>100</cell>
+                <cell>10</cell>
+                <cell>1500</cell>
+            </row>
+            <row>
+                <cell>Boss</cell>
+                <cell>Un alienígena con mucha vida y bastante daño. Puede dropear Cristal Elemental el cual tendrá uso próximamente.</cell>
+                <cell>200</cell>
+                <cell>200</cell>
+                <cell>100</cell>
+                <cell>15</cell>
+                <cell>2400</cell>
+            </row>
+            <row>
+                <cell>Parasite</cell>
+                <cell>Poca vida pero muchísimo daño.</cell>
+                <cell>10</cell>
+                <cell>10</cell>
+                <cell>160</cell>
+                <cell>10</cell>
+                <cell>500</cell>
+            </row>
+            <row>
+                <cell>Drone</cell>
+                <cell>Tiene poca vida pero mucha armadura. Hace poco daño pero es el alienígena con más penetración de blindaje entre los alienígenas simples. Además, el único capaz de dropear Placas base para crear cohetes Kamikaze.</cell>
+                <cell>30</cell>
+                <cell>100</cell>
+                <cell>20</cell>
+                <cell>30</cell>
+                <cell>670</cell>
+            </row>
+            <row>
+                <cell>Mutant</cell>
+                <cell>El alienígena más peligroso, pero siempre que sea eliminado dropeará un Cristal Elemental.</cell>
+                <cell>500</cell>
+                <cell>100</cell>
+                <cell>300</cell>
+                <cell>100</cell>
+                <cell>4910</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Scavenger</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Carbón</cell>
+                <cell>90</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Petróleo</cell>
+                <cell>80</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Set de Herramientas</cell>
+                <cell>50</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>40</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>30</cell>
+                <cell>9</cell>
+            </row>
+            <row>
+                <cell>Cuerda vieja</cell>
+                <cell>20</cell>
+                <cell>8</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Warrior</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Acero</cell>
+                <cell>90</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Petróleo</cell>
+                <cell>80</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Moneda de Cobre</cell>
+                <cell>50</cell>
+                <cell>20</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>40</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>30</cell>
+                <cell>9</cell>
+            </row>
+            <row>
+                <cell>Cuerda vieja</cell>
+                <cell>20</cell>
+                <cell>8</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Elite</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Cobre</cell>
+                <cell>90</cell>
+                <cell>10</cell>
+            </row>
+            <row>
+                <cell>Petróleo</cell>
+                <cell>80</cell>
+                <cell>30</cell>
+            </row>
+            <row>
+                <cell>Moneda de Cobre</cell>
+                <cell>50</cell>
+                <cell>30</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>40</cell>
+                <cell>30</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>30</cell>
+                <cell>20</cell>
+            </row>
+            <row>
+                <cell>Bota</cell>
+                <cell>20</cell>
+                <cell>20</cell>
+            </row>
+            <row>
+                <cell>CPU</cell>
+                <cell>20</cell>
+                <cell>1</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Boss</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Moneda de Cobre</cell>
+                <cell>100</cell>
+                <cell>40</cell>
+            </row>
+            <row>
+                <cell>Tesoro de Acero</cell>
+                <cell>90</cell>
+                <cell>1</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>40</cell>
+                <cell>50</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>30</cell>
+                <cell>50</cell>
+            </row>
+            <row>
+                <cell>Cristal Elemental <badge type="new">Nuevo</badge></cell>
+                <cell>20</cell>
+                <cell>1</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Parasite</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Moneda de Cobre</cell>
+                <cell>100</cell>
+                <cell>10</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Drone</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Placa de Plata</cell>
+                <cell>100</cell>
+                <cell>40</cell>
+            </row>
+            <row>
+                <cell>Placa de Plata</cell>
+                <cell>90</cell>
+                <cell>1</cell>
+            </row>
+            <row>
+                <cell>Moneda de Cobre</cell>
+                <cell>80</cell>
+                <cell>50</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>40</cell>
+                <cell>50</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>30</cell>
+                <cell>1</cell>
+            </row>
+            <row>
+                <cell>Placa Base <badge type="new">Nuevo</badge></cell>
+                <cell>20</cell>
+                <cell>1</cell>
+            </row>
+        </table>
+
+        <title3>Drops de Mutant</title3>
+        <table>
+            <header>
+                <cell>Ítem</cell>
+                <cell>Probabilidad</cell>
+                <cell>Cantidad máxima</cell>
+            </header>
+            <row>
+                <cell>Cristal Elemental <badge type="new">Nuevo</badge></cell>
+                <cell>100</cell>
+                <cell>1</cell>
+            </row>
+            <row>
+                <cell>Tesoro de Acero</cell>
+                <cell>100</cell>
+                <cell>3</cell>
+            </row>
+            <row>
+                <cell>Moneda de Oro</cell>
+                <cell>90</cell>
+                <cell>100</cell>
+            </row>
+            <row>
+                <cell>Bala 9mm</cell>
+                <cell>80</cell>
+                <cell>150</cell>
+            </row>
+            <row>
+                <cell>Bala 5.45mm</cell>
+                <cell>70</cell>
+                <cell>150</cell>
+            </row>
+        </table>
+
+        <card>
+            <title>Siguiente página: Combate entre alienígenas.</title>
+            <content>
+                <linkbutton href="/wiki/5.1.%20Combate%20entre%20alienígenas" variant="primary">
+                    5.1. Combate entre alienígenas
+                </linkbutton>
+            </content>
+        </card>
+    </section>
+</document>

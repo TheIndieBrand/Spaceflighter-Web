@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <authors>
+        <author>
+            <nickname>Ether</nickname>
+            <rol>Creador</rol>
+        </author>
+    </authors>
+
+    <section>
+        <p>Hay varios subcomandos dentro del comando platform, el cual te permitirá gestionar tu cohete:</p>
+        <table>
+            <header>
+                <cell>Comando</cell>
+                <cell>Función</cell>
+            </header>
+            <row>
+                <cell><badge type="experimental">/rocket info</badge></cell>
+                <cell>Este comando permite ver información del cohete montado en la plataforma de lanzamiento.</cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/rocket mount</badge></cell>
+                <cell>Permite montar un nuevo cohete en la plataforma de lanzamiento.</cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/rocket unmount</badge></cell>
+                <cell>Permite desmontar un cohete de la plataforma de lanzamiento.</cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/rocket factory</badge></cell>
+                <cell>Permite ensamblar nuevos cohetes para montarlos en la plataforma de lanzamiento.</cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/rocket platform manage</badge></cell>
+                <cell>
+                    <p>Permite gestionar la plataforma de lanzamiento, ofreciendo las siguientes opciones:</p>
+                    <list>
+                        <listitem>Personalizar el alias de tu cohete</listitem>
+                        <listitem>Llenar el tanque de combustible</listitem>
+                        <listitem>Ver ítems de la cabina</listitem>
+                        <listitem>Lanzar cohete (Solo si se cumplen ciertas condiciones)</listitem>
+                    </list>
+                </cell>
+            </row>
+            <row>
+                <cell><badge type="experimental">/rocket platform item</badge></cell>
+                <cell>
+                    <p>Permite gestionar los ítems de tu cohete.</p>
+                    <list>
+                        <listitem>Si seleccionas la opción "Agregar ítems": Se listarán los ítems de tu inventario.</listitem>
+                        <listitem>Si selecciones la opción "Sacar ítems": Se listarán los ítems de tu cohete.</listitem>
+                    </list>
+                </cell>
+            </row>
+            <row>
+                <cell>
+                    <badge type="experimental">/rocket platform weapon</badge>
+                    <badge type="new">Nuevo</badge>
+                </cell>
+                <cell>
+                    <p>Permite gestionar la torreta de tu cohete. Si no es un cohete con torreta montada no tendrás disponible este comando.</p>
+                    <p>Opciones disponibles:</p>
+                    <list>
+                        <listitem>Desmontar arma de la torreta.</listitem>
+                    </list>
+                    <tip>Cada torreta permite distintos tipos de armas.</tip>
+                    <list>
+                        <listitem>Descargar arma.</listitem>
+                        <listitem>Armartillar arma.</listitem>
+                        <listitem>Recargar arma.</listitem>
+                    </list>
+                    <warning>El arma que se gestionará será la montada en la torreta</warning>
+                </cell>
+            </row>
+        </table>
+
+        <cardgrid>
+            <card>
+                <title>Siguiente página: Armas de fuego.</title>
+                <content>
+                    <linkbutton href="/wiki/2.1.%20Armas%20de%20fuego" variant="primary">
+                        2.1. Armas de fuego
+                    </linkbutton>
+                </content>
+            </card>
+            <card>
+                <title>Siguiente punto: Órbitas.</title>
+                <content>
+                    <linkbutton href="/wiki/3.%20Órbitas" variant="primary">
+                        3. Órbitas
+                    </linkbutton>
+                </content>
+            </card>
+        </cardgrid>
+    </section>
+</document>
