@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Docs.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+---
+
+<BaseLayout title="Spaceflighter - 404">
+	<Navbar />
+	<Layout>
+        <section class="d-flex vh-100 justify-content-center align-items-center">
+            <div class="container"> 
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="block p-4 mx-2 text-center">
+                            <h1 class="h1styled mb-4">404</h1>
+                            <p>Está rara esa ruta.</p>
+                            <a class="btn btn-outline-primary mt-3" href="/">Inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	</Layout>
+</BaseLayout>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		const navbar = document.querySelector('.custom-navbar');
+		if (!navbar) return;
+		navbar.classList.add('visible');
+	});
+</script>

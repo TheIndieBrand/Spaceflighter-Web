@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/navbar.astro";
+import Database from '../../utils/database.ts';
+
+const galaxiesDb = Database.getInstance('galaxies');
+const allGalaxiesRaw = await galaxiesDb.all();
+
+const galaxiesData = allGalaxiesRaw.map(item => ({
+    ...item.value
+}));
+---
+
+<div id="map-container">
+    <canvas id="space-map"></canvas>
+
+    <div>
+        <div>
+            <span>Modo</span>
+            <span>Galaxias</span>
+        </div>
+
+        <div>
+            <span>Zoom</span>
+            <span>1.00x</span>
+        </div>
+    </div>
+
+    <div id="map-tooltip"></div>
+
+    <div class="map-banner">
+        <div class="banner-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span>Mapa representativo en desarrollo</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    #space-map {
+        position: absolute;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        cursor: grab;
+    }
+
+    #space-map:active {
+        cursor: grabbing;
+    }
+
+    #map-container {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        background: radial-gradient(circle at center, #0e0e1a, #050509);
+    }
+
+    #map-tooltip {
+        position: absolute;
+        pointer-events: none;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+        background: rgba(10, 10, 20, 0.85);
+        color: #fff;
+        border-radius: 6px;
+        border: 1px solid rgba(120, 120, 255, 0.25);
+        opacity: 0;
+        transform: translate(-50%, -120%);
+        transition: opacity 0.1s ease;
+        z-index: 20;
+    }
+
+    .map-banner {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+        pointer-events: none;
+    }
+
+    .banner-content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(48, 47, 47, 0.9);
+        color: #ffffff;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid #f1c40f;
+        animation: fadeInSlide 0.5s ease-out;
+    }
+
+    .banner-content svg {
+        color: #f1c40f;
+        flex-shrink: 0;
+    }
+
+    @keyframes fadeInSlide {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script type="module" define:vars={{ galaxiesData }}>
+    import { initMap } from "/src/utils/initMap.ts";
+
+    const data = {
+        galaxies: galaxiesData
+    };
+
+    initMap({ mode: "GALAXY" }, data);
+</script>
