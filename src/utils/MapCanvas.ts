@@ -279,6 +279,7 @@ export class MapCanvas {
         for (const g of this.data.galaxies) {
             const p = this.worldToScreen(g.x, g.y);
             if (!this.isVisible(p.x, p.y, 10)) continue;
+            console.log(`${g.x}:${g.y} -> ${g.name}`);
 
             // halo
             this.ctx.fillStyle = "rgba(107, 92, 255, 0.15)";

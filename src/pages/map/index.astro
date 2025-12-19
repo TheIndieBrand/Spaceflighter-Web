@@ -11,7 +11,7 @@ const galaxiesData = allGalaxiesRaw.map(item => ({
 }));
 ---
 
-<div id="map-container">
+<div id="map-container" data-galaxies={JSON.stringify(galaxiesData)}>
     <canvas id="space-map"></canvas>
 
     <div>
@@ -114,12 +114,19 @@ const galaxiesData = allGalaxiesRaw.map(item => ({
     }
 </style>
 
-<script type="module" define:vars={{ galaxiesData }}>
-    import { initMap } from "/src/utils/initMap.ts";
+<script>
+    import { initMap } from "../../utils/initMap.ts";
 
-    const data = {
-        galaxies: galaxiesData
-    };
+    const container = document.getElementById('map-container');
 
-    initMap({ mode: "GALAXY" }, data);
+    if (container && container.dataset.galaxies) {
+        try {
+            const galaxiesData = JSON.parse(container.dataset.galaxies);
+            const data = { galaxies: galaxiesData };
+
+            initMap({ mode: "GALAXY" }, data);
+        } catch (e) {
+            console.error("Error al parsear los datos de las galaxias:", e);
+        }
+    }
 </script>

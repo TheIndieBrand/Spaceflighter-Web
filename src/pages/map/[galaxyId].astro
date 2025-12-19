@@ -11,7 +11,7 @@ const solarSystemsData = allSolarSystemsRaw.map(item => ({
 }));
 ---
 
-<div id="map-container">
+<div id="map-container" data-solar-systems={JSON.stringify(solarSystemsData)}>
     <canvas id="space-map"></canvas>
 
     <div>
@@ -114,12 +114,19 @@ const solarSystemsData = allSolarSystemsRaw.map(item => ({
     }
 </style>
 
-<script type="module" define:vars={{ solarSystemsData }}>
-    import { initMap } from "/src/utils/initMap.ts";
+<script>
+    import { initMap } from "../../utils/initMap.ts";
 
-    const data = {
-        galaxies: solarSystemsData
-    };
+    const container = document.getElementById('map-container');
 
-    initMap({ mode: "GALAXY" }, data);
+    if (container && container.dataset.solarSystems) {
+        try {
+            const solarSystemsData = JSON.parse(container.dataset.solarSystems);
+            const data = { galaxies: solarSystemsData };
+
+            initMap({ mode: "GALAXY" }, data);
+        } catch (e) {
+            console.error("Error al parsear los datos de los sistemas solares:", e);
+        }
+    }
 </script>
